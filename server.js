@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');    // this can't handle multipart
+var fs = require('fs');
 var port = 8000 || process.env.PORT;
 
 var multer  = require('multer');
@@ -24,7 +25,8 @@ app.post("/api/fileanalyse", multer({ dest: './uploads/'}).single('uploadedFile'
 	//console.log(req.file.size);
 	req.statusCode = 200;
 	res.setHeader("Content-Type", "text/json");
-	res.send({"size": req.file.size, "form-input":req.body});
+	res.send({"size": req.file.size, "form-input":req.body}); 
+	fs.unlinkSync(req.file.path); //delete the file after it is used from the uploads directory
 });
 
 
