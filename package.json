@@ -1,0 +1,21 @@
+{
+  "name": "filemetadata",
+  "version": "1.0.0",
+  "description": "returns the submitted file size",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "keywords": [
+    "file",
+    "metadata",
+    "microservice"
+  ],
+  "author": "mojoboss",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "multer": "^1.1.0"
+  }
+}
