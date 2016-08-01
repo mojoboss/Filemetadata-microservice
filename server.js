@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');    // this can't handle multipart
 var fs = require('fs');
-var port = 8000 || process.env.PORT;
+var port = process.env.PORT || 8000 ;
 
 var multer  = require('multer');
 var upload = multer();
